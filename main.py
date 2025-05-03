@@ -1,8 +1,8 @@
 import random
 
 def choose_word():
-    with open("/usr/share/dict/words") as f:
-        words = [word.strip().lower() for word in f if word.strip().isalpha()]
+    with open("hangman_words.txt") as f:
+        words = [line.strip() for line in f]
     return random.choice(words)
 
 def display_word(word, guessed_letters):
